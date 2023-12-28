@@ -1,0 +1,38 @@
+body {
+    --static-accent: rgba(64, 64, 242, 1);
+    --static-white: rgba(255, 255, 255, 1);
+    --static-black: rgba(28, 28, 28, 1);
+    --static-red: rgba(208, 52, 44, 1);
+
+    --primary-accent: rgba(64, 64, 242, 1);
+    --primary-blue: rgba(64, 64, 242, 0.05);
+    --primary-light: rgba(247, 250, 251, 1);
+    --primary-hover: rgba(24, 21, 176, 1);
+    --primary-bg: rgba(255, 255, 255, 1);
+
+    --black-100: rgba(28, 28, 28, 1);
+    --black-80: rgba(28, 28, 28, 0.8);
+    --black-40: rgba(28, 28, 28, 0.4);
+    --black-20: rgba(28, 28, 28, 0.2);
+    --black-10: rgba(28, 28, 28, 0.1);
+    --black-5: rgba(28, 28, 28, 0.05);
+
+    --white-100: rgba(255, 255, 255, 1);
+    --white-80: rgba(255, 255, 255, 0.8);
+    --white-40: rgba(255, 255, 255, 0.4);
+    --white-20: rgba(255, 255, 255, 0.2);
+    --white-10: rgba(255, 255, 255, 0.1);
+    --white-5: rgba(255, 255, 255, 0.05);
+
+    --warning-green: rgb(78, 149, 81);
+    --warning-bg-green: rgba(98, 193, 101, 0.2);
+    --warning-yellow: rgba(250, 203, 64, 1);
+    --warning-orange: rgba(244, 153, 49, 1);
+    --warning-red: rgba(208, 52, 44, 1);
+    --warning-bg-red: rgba(208, 52, 44, 0.1);
+    --warning-red-hover: rgba(158, 22, 15, 1);
+
+    --secondary-blue: rgba(89, 131, 255, 0.18);
+    --secondary-red: rgba(238, 80, 72, 0.18);
+    --secondary-modal-blur: rgba(57, 101, 255, 0.1);
+}

@@ -1,0 +1,31 @@
+@use 'variables' as v;
+
+
+.name {
+    align-self: flex-start;
+    font: v.$font-name ;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: v.$main-content-gap;
+    padding: v.$gap-big-large 0;
+}
+
+.progress-box {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-mid-large;
+}
+
+.progress-details {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-mid-large;
+}
+
+.progress-text {
+    color: var(--black-100);
+    font: v.$font-mid-to-big-regular;
+}

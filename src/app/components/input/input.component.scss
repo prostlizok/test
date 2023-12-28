@@ -1,0 +1,220 @@
+@use 'variables' as v;
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: v.$gap-small-medium;
+    position: relative;
+}
+
+.basic-input-label {
+    font: v.$font-mid-to-big-regular;
+}
+
+.basic-input {
+    all: unset;
+    width: calc(100% - v.$gap-small-large*2);
+    border-radius: v.$border-radius-mid;
+    padding: v.$gap-small-medium v.$gap-small-large;
+    background-color: var(--primary-light);
+    font: v.$font-mid-regular;
+    border: v.$border-thin solid transparent;
+    color: var(--black-100);
+    transition: all v.$transition-time;
+    z-index: v.$basic-z-index;
+
+    &::placeholder {
+        color: var(--black-40);
+        font: v.$font-mid-regular;
+    }
+
+    &:hover {
+        transition: all v.$transition-time;
+        background-color: var(--primary-blue);
+    }
+
+    &:focus {
+        border: v.$border-thin solid var(--static-accent);
+    }
+
+    &:focus:hover {
+        background-color: var(--primary-light);
+
+    }
+
+    &:-webkit-autofill::placeholder {
+        color: var(--black-100);
+    }
+
+
+    &:-webkit-autofill {
+        color: var(--black-100);
+        // -webkit-box-shadow: 0 0 0 1000px var(--primary-light) inset;
+    }
+
+    &:-webkit-autofill {
+        transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+
+    }
+
+    &:-webkit-autofill:focus {
+        color: var(--black-100);
+        background-color: var(--primary-light);
+    }
+
+
+}
+
+.input-icon {
+    position: absolute;
+    cursor: pointer;
+    right: v.$gap-small-large;
+    top: 48px;
+    z-index: v.$icon-z-index;
+    user-select: none;
+
+}
+
+.basic-select-option {
+    font: v.$font-small-regular;
+    color: var(--black-80);
+    padding: v.$gap-small-regular v.$gap-small-large;
+
+    cursor: pointer;
+    border-radius: v.$border-radius-mid;
+    transition: all v.$transition-time;
+
+    &:hover {
+        transition: all v.$transition-time;
+        background-color: var(--primary-light);
+    }
+}
+
+.basic-select-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - v.$gap-small-large*2);
+    padding-right: v.$gap-small-large !important;
+}
+
+.select {
+    position: relative;
+
+}
+
+.basic-select-option-box {
+    top: 54px;
+    width: calc(100%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-100);
+    border: v.$border-thin solid var(--black-10);
+    border-radius: v.$border-radius-mid;
+    z-index: v.$select-z-index;
+
+}
+
+.select-icon {
+    font-size: v.$size-icon-large;
+    user-select: none
+}
+
+.file-input {
+    display: none;
+}
+
+.file-input-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - v.$gap-small-large*2);
+    border-radius: v.$border-radius-mid;
+    padding: v.$gap-small-medium v.$gap-small-large;
+    background-color: var(--primary-light);
+    color: var(--black-100);
+    cursor: pointer;
+    transition: all v.$transition-time;
+
+    
+    &:hover {
+        transition: all v.$transition-time;
+        background-color: var(--primary-blue);
+    }
+
+}
+
+.file-input-icon {
+    cursor: pointer;
+    color: var(--black-40);
+    font-size: 56px;
+}
+
+.file-input-drag-drop-box {
+    display: flex;
+    align-items: center;
+    gap: v.$gap-small-large;
+}
+
+.file-input-info {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: v.$gap-small-tiny;
+}
+
+.file-input-info-top {
+    color: var(--black-80);
+    font: v.$font-mid-to-big-medium;
+}
+
+
+.file-input-info-bottom {
+    color: var(--black-40);
+    font: v.$font-mid-regular;
+}
+
+.uploaded-file {
+    width: calc(100% - v.$gap-small-large*2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: v.$gap-small-medium v.$gap-small-large;
+
+}
+
+.uploaded-file-left {
+    display: flex;
+    align-items: center;
+    gap: v.$gap-small-large;
+}
+
+.uploaded-file-info {
+    display: flex;
+    align-items: center;
+    gap: v.$gap-small-regular;
+}
+
+.uploaded-file-name {
+    font: v.$font-mid-to-big-regular;
+    color: var(--black-80);
+}
+
+
+.uploaded-file-size {
+    font: v.$font-mid-regular;
+    color: var(--black-40);
+}
+
+.close-icon {
+    cursor: pointer;
+    font-size: v.$size-icon-large;
+    color: var(--black-40);
+
+}
+
+.uploaded-file-icon {
+    font-size: v.$size-icon-extra-large ;
+    color: var(--black-40);
+}

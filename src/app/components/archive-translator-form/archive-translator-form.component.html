@@ -1,0 +1,40 @@
+<main class="main-content" #mainContent>
+    <h1 class="name">Archive Translator</h1>
+    <app-input id="openai_api_key" type="password" labelText="Enter your OpenAI API Key:"
+        (inputValueEmmiter)="handleInput($event, 'openai_api_key')" />
+    <app-input id="openai_model" [input]="InputType.select" labelText="Select OpenAI Model"
+        (inputValueEmmiter)="handleInput($event, 'openai_model')" [selectOptions]="models" />
+    <app-input id="file" [allowedFileFormats]="allowedFormats" [input]="InputType.fileInput" labelText="Upload an Archive"
+        (inputValueEmmiter)="validateUploadedFiles($event)" />
+
+    <ng-container *ngIf="!isObjectEmpty(currentFileMessage)">
+        <app-message [messageStatus]="currentFileMessage.status" [messageText]="currentFileMessage.text" />
+    </ng-container>
+
+    <app-input id="language" [input]="InputType.select" labelText="Select Target Language"
+        (inputValueEmmiter)="handleInput($event, 'language')" [selectOptions]="languages" />
+
+    <app-button [disabled]="isTranslateArchiveDisabled()" (buttonClickEmitter)="translateArchive()"
+        [className]="isTranslateArchiveDisabled()? 'basic-button': 'done-button'" text="Translate Archive" />
+
+    <div *ngIf="showProgress" class="progress-box">
+        <ng-container *ngFor="let item of progress">
+            <app-progress-bar [label]="item.label" [maxValue]="item.maxValue" [currValue]="item.currValue" />
+        </ng-container>
+
+        <div class="progress-details">
+            <p class="progress-text">Tags translated in current file: </p>
+            <p class="progress-text">Amount of too big chunks(>4096 tokens): 99</p>
+        </div>
+
+        <ng-container *ngIf="showResult">
+            <p class="progress-text">Task completed.</p>
+            <app-message [messageStatus]="progressMessage.status" [messageText]="progressMessage.text" />
+            <app-button className="done-button" text="Click here to download" />
+
+        </ng-container>
+
+    </div>
+
+
+</main>

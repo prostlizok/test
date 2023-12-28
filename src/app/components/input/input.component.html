@@ -1,0 +1,53 @@
+<div class="input-container" *ngIf="input===InputType.basicInput">
+    <label class="basic-input-label" [for]="id">{{labelText}}</label>
+    <input #inputValue class="basic-input" [class]="className" [id]="id" [type]="type" [placeholder]="placeholder"
+        (input)="handleInput()" />
+
+    <span class="material-symbols-outlined input-icon" (click)="toggleShowPassword()">{{passwordIcon}}</span>
+</div>
+
+<div class="input-container" *ngIf="input===InputType.select">
+    <label class="basic-input-label" [for]="id">{{labelText}}</label>
+    <div class="select">
+        <div class="basic-input basic-select-field" [id]="id" [class]="className" (click)="toggleShowOptions()">
+            <div #selectValue>{{currentOption || 'Select'}}</div>
+            <span class="material-symbols-rounded select-icon">{{ selectIcon }}</span>
+
+        </div>
+        <div class="basic-select-option-box" *ngIf="isShownOptions">
+            <div class="basic-select-option" *ngFor="let option of selectOptions" (click)="handleSelect(option)">
+                {{option}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="input-container" *ngIf="input===InputType.fileInput">
+    <label class="basic-input-label" [for]="id">{{labelText}}</label>
+    <div class="file-input-box" (click)="fileValue.click()" appDragAndDrop (fileEmitter)="setFile($event)">
+        <div class="file-input-drag-drop-box">
+            <span class="material-symbols-outlined file-input-icon">cloud_upload</span>
+            <div class="file-input-info">
+                <div class="file-input-info-top">Drag and drop file here</div>
+                <div class="file-input-info-bottom">{{getAllowedFormatsDND()}}</div>
+
+            </div>
+        </div>
+        <app-button className="done-button" text="Browse files" />
+        <input #fileValue class="file-input" [id]="id" type="file" [placeholder]="placeholder"
+            (change)="handleFileInput($event)" [accept]="getAllowedFormats()"/>
+
+    </div>
+
+    <div class="uploaded-file" *ngFor="let file of uploadedFileList">
+        <div class="uploaded-file-left">
+            <span class="material-symbols-outlined uploaded-file-icon">note</span>
+            <div class="uploaded-file-info">
+                <div class="uploaded-file-name">{{file.name}}</div>
+                <div class="uploaded-file-size">{{handleFileSize(file.size)}}</div>
+
+            </div>
+        </div>
+        <span class="material-symbols-outlined close-icon" (click)="deleteFile(file)">close</span>
+
+    </div>
+</div>

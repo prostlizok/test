@@ -1,0 +1,18 @@
+@use 'variables' as v;
+
+.message {
+    width: calc(100% - v.$gap-small-large*2);
+    padding: v.$gap-mid-medium v.$gap-small-large;
+    border-radius: v.$border-radius-mid;
+    font: v.$font-mid-to-big-regular;
+}
+
+.message-success {
+    color: var(--warning-green);
+    background-color: var(--warning-bg-green);
+}
+
+.message-error{
+    color: var(--warning-red);
+    background-color: var(--warning-bg-red);
+}

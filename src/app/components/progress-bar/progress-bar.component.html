@@ -1,0 +1,9 @@
+<div class="progress-bar-row">
+    <div class="progress-bar-text">
+        <label class="progress-bar-label">{{label}}</label>
+        <p class="item">{{getProgressInfo()}}</p>
+    </div>
+    <div class="progress-bar-box">
+        <progress class='progress-bar' [max]="maxValue" [value]="currValue"></progress>
+    </div>
+</div>

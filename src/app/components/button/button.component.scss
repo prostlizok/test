@@ -1,0 +1,59 @@
+@use 'variables' as v;
+
+.button {
+    all: unset;
+    display: inline-block;
+    font: v.$font-mid-to-big-regular;
+    border-radius: v.$border-radius-mid;
+    color: var(--static-white);
+    padding: v.$gap-small-medium v.$gap-small-large;
+    text-align: center;
+    transition: all v.$transition-time;
+    cursor: pointer;
+    border: v.$border-thin solid transparent;
+    white-space: nowrap;
+    user-select: none;
+
+
+    &:disabled {
+        pointer-events: none
+    }
+}
+
+.basic-button {
+
+    background-color: var(--black-5);
+    color: var(--black-100);
+    border: v.$border-thin solid transparent;
+
+    &:hover {
+        background-color: var(--white-100);
+        color: var(--black-80);
+        border: v.$border-thin solid var(--black-40);
+    }
+}
+
+
+.done-button {
+
+    background-color: var(--primary-accent);
+    color: var(--white-100);
+
+    &:hover {
+        background-color: var(--white-100);
+        color: var(--primary-accent);
+        border: v.$border-thin solid var(--primary-accent);
+
+    }
+}
+
+.danger-button {
+    background-color: var(--warning-red);
+    color: var(--white-100);
+    &:hover {
+
+        background-color: var(--white-100);
+        color: var(--warning-red);
+        border: v.$border-thin solid var(--warning-red);
+    }
+}
